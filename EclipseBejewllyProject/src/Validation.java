@@ -2,10 +2,14 @@
 public class Validation {
 
 	public boolean checkTask1(Board gameBoard) {
-		int[] testLoc1 = {3,2};
-		int[] testLoc2 = {4,2};
-		if(gameBoard.gemAtLocation(testLoc1).ordinal() == 2){
-			if(gameBoard.gemAtLocation(testLoc2).ordinal() == 3){
+		
+
+		int[] testLoc1 = {2,3};
+		int[] testLoc2 = {2,4};
+		
+		
+		if(gameBoard.gemAtLocation(testLoc1).ordinal() == 7){
+			if(gameBoard.gemAtLocation(testLoc2).ordinal() == 2){
 				return true;
 			}
 		}
@@ -21,10 +25,12 @@ public class Validation {
 	}
 
 	public boolean checkTask3Valid(Board gameBoard) {
-		int[] testLoc1 = {3,2};
-		int[] testLoc2 = {4,2};
-		if(gameBoard.gemAtLocation(testLoc1).ordinal() == 2){
-			if(gameBoard.gemAtLocation(testLoc2).ordinal() == 3){
+		int[] testLoc1 = {2,3};
+		int[] testLoc2 = {0,4};
+		
+
+		if(gameBoard.gemAtLocation(testLoc1).ordinal() == 7){
+			if(gameBoard.gemAtLocation(testLoc2).ordinal() == 4){
 				return true;
 			}
 		}
@@ -32,8 +38,10 @@ public class Validation {
 	}
 
 	public boolean checkTask3Invalid(Board gameBoard) {
-		int[] testLoc1 = {3,2};
+		int[] testLoc1 = {2,3};
 		int[] testLoc2 = {2,2};
+		
+		
 		if(gameBoard.gemAtLocation(testLoc1).ordinal() == 2){
 			if(gameBoard.gemAtLocation(testLoc2).ordinal() == 6){
 				return true;
