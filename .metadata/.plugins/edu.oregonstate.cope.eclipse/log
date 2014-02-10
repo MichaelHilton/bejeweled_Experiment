@@ -1,0 +1,31 @@
+09 Feb 2014;16:10:09 [main] INFO edu.oregonstate.cope.clientRecorder.fileOps.SimpleFileProvider SimpleFileProvider set the root to /Users/michaelhilton/Development/bejeweled_Experiment/.metadata/.plugins/edu.oregonstate.cope.eclipse
+09 Feb 2014;16:10:09 [main] INFO edu.oregonstate.cope.clientRecorder.fileOps.SimpleFileProvider SimpleFileProvider set the root to /Applications/eclipse_latest/configuration/org.eclipse.osgi/bundles/245/data
+09 Feb 2014;16:10:09 [main] INFO edu.oregonstate.cope.clientRecorder.fileOps.EventFilesProvider EventFilesProvider set the root to /Users/michaelhilton/Development/bejeweled_Experiment/.metadata/.plugins/edu.oregonstate.cope.eclipse/0.7.4.201402061443/eventFiles
+09 Feb 2014;16:10:09 [main] INFO edu.oregonstate.cope.eclipse.StartPluginUIJob Could not find project for editor BejeweledScore.java
+09 Feb 2014;16:10:09 [main] INFO edu.oregonstate.cope.eclipse.StartPluginUIJob Could not find project for editor Bejewelly.java
+09 Feb 2014;16:10:09 [main] INFO edu.oregonstate.cope.eclipse.StartPluginUIJob Could not find project for editor Validation.java
+09 Feb 2014;16:10:09 [main] INFO edu.oregonstate.cope.eclipse.StartPluginUIJob Could not find project for editor Bejewelly.java
+09 Feb 2014;16:10:09 [main] INFO edu.oregonstate.cope.eclipse.StartPluginUIJob Could not find project for editor BejeweledScore.java
+09 Feb 2014;16:10:09 [main] INFO edu.oregonstate.cope.eclipse.StartPluginUIJob Could not find project for editor Board.java
+09 Feb 2014;16:10:09 [main] INFO org.quartz.impl.StdSchedulerFactory Using default implementation for ThreadExecutor
+09 Feb 2014;16:10:09 [main] INFO org.quartz.simpl.SimpleThreadPool Job execution threads will use class loader of thread: main
+09 Feb 2014;16:10:09 [main] INFO org.quartz.core.SchedulerSignalerImpl Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+09 Feb 2014;16:10:09 [main] INFO org.quartz.core.QuartzScheduler Quartz Scheduler v.1.8.6 created.
+09 Feb 2014;16:10:09 [main] INFO org.quartz.simpl.RAMJobStore RAMJobStore initialized.
+09 Feb 2014;16:10:09 [main] INFO org.quartz.core.QuartzScheduler Scheduler meta-data: Quartz Scheduler (v1.8.6) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+09 Feb 2014;16:10:09 [main] INFO org.quartz.impl.StdSchedulerFactory Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+09 Feb 2014;16:10:09 [main] INFO org.quartz.impl.StdSchedulerFactory Quartz scheduler version: 1.8.6
+09 Feb 2014;16:10:09 [main] INFO org.quartz.core.QuartzScheduler Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+09 Feb 2014;16:10:09 [DefaultQuartzScheduler_QuartzSchedulerThread] DEBUG org.quartz.simpl.SimpleJobFactory Producing instance of Job 'DEFAULT.File Send Now', class=edu.oregonstate.cope.fileSender.FileSenderJob
+09 Feb 2014;16:10:09 [DefaultQuartzScheduler_Worker-1] DEBUG org.quartz.core.JobRunShell Calling execute on job DEFAULT.File Send Now
+09 Feb 2014;16:10:09 [DefaultQuartzScheduler_Worker-1] INFO edu.oregonstate.cope.fileSender.FileSenderJob Connecting to host nome.eecs.oregonstate.edu ...
+09 Feb 2014;16:10:10 [Timer-0] DEBUG org.quartz.utils.UpdateChecker Checking for available updated version of Quartz...
+09 Feb 2014;16:10:10 [DefaultQuartzScheduler_Worker-1] INFO edu.oregonstate.cope.fileSender.FileSenderJob Sending files from /Users/michaelhilton/Development/bejeweled_Experiment/.metadata/.plugins/edu.oregonstate.cope.eclipse to nome.eecs.oregonstate.edu:COPE/02a30f67-2d70-4203-aa89-6d11d837706b ...
+09 Feb 2014;16:10:13 [DefaultQuartzScheduler_Worker-1] INFO edu.oregonstate.cope.fileSender.FileSenderJob Upload finished
