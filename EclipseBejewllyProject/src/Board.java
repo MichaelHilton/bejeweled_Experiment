@@ -368,17 +368,6 @@ class Board {
               Piece.values()[3]};
       this.boardGrid[7] = array8;
     }
-  private void addPieceToBoardTheSameWay(int i, int j){
-      Random randomPiece = new Random();
-      int gemInt = randomPiece.nextInt(BOARD_SIZE-1) + 1;
-      this.boardGrid[i][j] = Piece.values()[2];
-      int[] newPieceArray = {i,j};
-      if (hasSequence(newPieceArray)){
-          //addPieceToBoardTheSameWay(i,j);
-      } else {
-        return;
-      }
-    }
   private void addRandomPieceAtLocation(int i, int j){
     Random randomPiece = new Random();
     int gemInt = randomPiece.nextInt(BOARD_SIZE-1) + 1;
