@@ -22,7 +22,7 @@ class Board {
         this.boardGrid[piece_b[0]][piece_b[1]] = temp_a;
     }
 
-    public Boolean wasSequenceCreated() {
+    public Boolean wasChainCreated() {
         // Left
         for (int i = 2; i < 8; i++) {
             for (int j = 0; j < 8; j++) {
@@ -72,7 +72,7 @@ class Board {
 
     public void swapPiecesWhenAcceptable(int[] piece_a, int[] piece_b) {
         swapAnyTwoPieces(piece_a, piece_b);
-        if (!wasSequenceCreated()) {
+        if (!wasChainCreated()) {
             swapAnyTwoPieces(piece_a, piece_b);
         } else {
 

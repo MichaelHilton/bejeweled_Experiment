@@ -45,7 +45,7 @@ public class Bejewelly {
 
         // TODO: IMPLEMENT THIS FUNCTION IN BOARD.JAVA
         System.out.println("SEQUENCE CREATED: "
-                + gameBoard.wasSequenceCreated());
+                + gameBoard.wasChainCreated());
         boolean task2done = val.checkTask2(gameBoard);
         System.out.println("");
         if (task2done) {

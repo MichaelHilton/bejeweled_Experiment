@@ -14,7 +14,7 @@ public class Validation {
     }
 
     public boolean checkTask2(Board gameBoard) {
-        return gameBoard.wasSequenceCreated();
+        return gameBoard.wasChainCreated();
     }
 
     public boolean checkTask3(Board gameBoard) {
