@@ -6,7 +6,7 @@ public class Bejewelly {
         System.out.println("********* Swap C3 with C4 *********");
         System.out.println("***********************************");
         Board gameBoard = new Board();
-        gameBoard.loadBoardTask1();
+        gameBoard.loadStaticBoard();
         System.out.println("");
         System.out.println("********** Before Swap ************");
         gameBoard.displayBoard();
@@ -38,7 +38,7 @@ public class Bejewelly {
         System.out.println("****** Swap Created Sequence ******");
         System.out.println("***********************************");
         Board gameBoard2 = new Board();
-        gameBoard2.loadBoardTask1();
+        gameBoard2.loadStaticBoard();
         gameBoard.displayBoard();
         System.out.println("");
         System.out.println("****** Was Sequence Created? ******");
@@ -61,7 +61,7 @@ public class Bejewelly {
         System.out.println("***********************************");
 
         System.out.println("******* Before Valid Swap *********");
-        gameBoard.loadBoardTask1();
+        gameBoard.loadStaticBoard();
         gameBoard.displayBoard();
         System.out.println();
         System.out.println("** Perform Valid Swap [C3 to C4] **");
@@ -80,7 +80,7 @@ public class Bejewelly {
         System.out.println("Swap Occured: " + checkTask3Valid);
         System.out.println();
         System.out.println("****** Before Invalid Swap ********");
-        gameBoard.loadBoardTask1();
+        gameBoard.loadStaticBoard();
         gameBoard.displayBoard();
         System.out.println();
         System.out.println("* Attempt Invalid Swap [C2 to C3] *");

@@ -11,7 +11,6 @@ class Board {
 
     public Board() {
         this.boardGrid = new Piece[BOARD_SIZE][BOARD_SIZE];
-        loadNewBoard();
     }
 
     // /////////////////////////
@@ -119,21 +118,9 @@ class Board {
         }
     }
     ////////////////////////////
-
-    private void loadNewBoard() {
-        for (int i = 0; i < BOARD_SIZE; i++) {
-            for (int j = 0; j < BOARD_SIZE; j++) {
-                addRandomPieceAtLocation(i, j);
-            }
-        }
-    }
-
-    protected void loadBoardTask1() {
-        // for (int i = 0; i < BOARD_SIZE; i++) {
-        // for (int j = 0; j < BOARD_SIZE; j++) {
-        // addPieceToBoardTheSameWay(i,j);
-        // }
-        // }
+    
+    // This is a static board used for testing so we know the expected locations of gems
+    protected void loadStaticBoard() {
         Piece[] array1 = { Piece.values()[4], Piece.values()[3],
                 Piece.values()[2], Piece.values()[7], Piece.values()[4],
                 Piece.values()[1], Piece.values()[7], Piece.values()[2] };
@@ -175,79 +162,6 @@ class Board {
         this.boardGrid[7] = array8;
     }
 
-    private void addRandomPieceAtLocation(int i, int j) {
-        Random randomPiece = new Random();
-        int gemInt = randomPiece.nextInt(BOARD_SIZE - 1) + 1;
-        this.boardGrid[i][j] = Piece.values()[gemInt];
-        int[] newPieceArray = { i, j };
-        if (hasSequence(newPieceArray)) {
-            addRandomPieceAtLocation(i, j);
-        } else {
-            return;
-        }
-    }
-
-    private Boolean hasSequence(int[] currentLocation) {
-        HashMap<String, int[][]> resultHash = getSequences(currentLocation);
-        if (resultHash.get("row").length > 2
-                || resultHash.get("col").length > 2) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-    
-    private HashMap<String, int[][]> getSequences(int[] currentLocation) {
-        int[][] currentSequence = { currentLocation };
-        HashMap<String, int[][]> directionalSequences = new HashMap<String, int[][]>();
-        // Check horizontal
-        int[][] backwardRowDirection = walkChain(currentLocation, walkRow[0]);
-        int[][] forwardRowDirection = walkChain(currentLocation, walkRow[1]);
-        int[][] currentRowSequence = BejewellyUtils.concatAll(
-                backwardRowDirection, currentSequence, forwardRowDirection);
-
-        directionalSequences.put("row", currentRowSequence);
-        // Check vertical
-        int[][] backwardColDirection = walkChain(currentLocation, walkColumn[0]);
-        int[][] forwardColDirection = walkChain(currentLocation, walkColumn[1]);
-        int[][] currentColSequence = BejewellyUtils.concatAll(
-                backwardColDirection, currentSequence, forwardColDirection);
-
-        directionalSequences.put("col", currentColSequence);
-
-        return directionalSequences;
-    }
-
-    private int[][] walkChain(int[] currentLocation, int[] vector) {
-        ArrayList<int[]> completedSequence = new ArrayList<int[]>();
-        return walkChain(currentLocation, vector, completedSequence);
-    }
-
-    private int[][] walkChain(int[] currentLocation, int[] vector,
-            ArrayList<int[]> completedSequence) {
-        Piece firstPiece = this.boardGrid[currentLocation[0]][currentLocation[1]];
-        int[] nextLocation = BejewellyUtils
-                .addPostions(currentLocation, vector);
-        if (isWithinBounds(nextLocation)) {
-            Piece nextPiece = this.boardGrid[nextLocation[0]][nextLocation[1]];
-            if (firstPiece == nextPiece) {
-                completedSequence.add(nextLocation);
-                return walkChain(nextLocation, vector, completedSequence);
-            }
-        }
-        int[][] sequence = new int[completedSequence.size()][];
-        sequence = completedSequence.toArray(sequence);
-        return sequence;
-    }
-    private Boolean isWithinBounds(int[] piece_array) {
-        int y = piece_array[0];
-        int x = piece_array[1];
-        if (y >= 0 && y <= BOARD_SIZE - 1 && x >= 0 && x <= BOARD_SIZE - 1) {
-            return true;
-        } else {
-            return false;
-        }
-    }
     // //////////////////
     // Utility functions
     private String getCharForNumber(int i) {
@@ -257,6 +171,4 @@ class Board {
     private int getNumberForCharacter(char value) {
         return (int) value - 64;
     }
-
-    // //////////////////
 }
