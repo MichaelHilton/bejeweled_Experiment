@@ -2,7 +2,7 @@ public class Bejewelly {
     public static void main(String[] args) {
         Validation val = new Validation();
         // TASK 1 - SWAP ANY TWO PIECES
-        System.out.println("************** TASK1 **************");
+        System.out.println("************** TASK1555555555 **************");
         System.out.println("********* Swap C3 with C4 *********");
         System.out.println("***********************************");
         Board gameBoard = new Board();
@@ -10,13 +10,19 @@ public class Bejewelly {
         System.out.println("");
         System.out.println("********** Before Swap ************");
         gameBoard.displayBoard();
-        int[] piece_a = { 2, 3 };
+        int[] piece_a = { 2, 3 }; 
         int[] piece_b = { 2, 4 };
 
         val.checkTask1(gameBoard);
         // FUNCTION TO SWAP ANY TWO PICES. THIS MUST BE IMPLEMENTED IN
         // BOARD.JAVA
         gameBoard.swapAnyTwoPieces(piece_a, piece_b);
+        
+        piece_a[0] = 2;
+        piece_a[1] = 4;
+        
+        piece_b[0] = 2;
+        piece_b[1] = 3;
 
         System.out.println("");
         System.out.println("*********** After Swap ************");
@@ -45,7 +51,7 @@ public class Bejewelly {
 
         // TODO: IMPLEMENT THIS FUNCTION IN BOARD.JAVA
         System.out.println("SEQUENCE CREATED: "
-                + gameBoard.wasChainCreated());
+                + gameBoard.wasChainCreated(piece_a, piece_b));
         boolean task2done = val.checkTask2(gameBoard);
         System.out.println("");
         if (task2done) {
