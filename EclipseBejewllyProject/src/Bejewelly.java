@@ -2,7 +2,7 @@ public class Bejewelly {
     public static void main(String[] args) {
         Validation val = new Validation();
         // TASK 1 - SWAP ANY TWO PIECES
-        System.out.println("************** TASK1 **************");
+        System.out.println("************** TASK1555555555 **************");
         System.out.println("********* Swap C3 with C4 *********");
         System.out.println("***********************************");
         Board gameBoard = new Board();
