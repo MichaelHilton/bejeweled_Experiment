@@ -15,15 +15,57 @@ class Board {
     // Participant-defined functions
 
     public void swapAnyTwoPieces(int[] piece_a, int[] piece_b) {
-
+        Piece temp = this.gemAtLocation(piece_a);
+        boardGrid[piece_a[0]][piece_a[1]] = this.gemAtLocation(piece_b);
+        boardGrid[piece_b[0]][piece_b[1]] = temp;
     }
 
     public Boolean wasChainCreated() {
+        Piece last = null;
+        int chainSize = 1;
+        for (int i=0; i<BOARD_SIZE; i++) {
+            for(int j=0; j<BOARD_SIZE; j++) {
+                if (boardGrid[i][j] == last) {
+                    chainSize++;
+                    if (chainSize >= 3)
+                        return true;
+                }
+                else
+                    chainSize = 1;  
+                    
+                 last = boardGrid[i][j];
+            }
+        }
+        
+        last = null;
+        chainSize = 1;
+        for (int i=0; i<BOARD_SIZE; i++) {
+            for(int j=0; j<BOARD_SIZE; j++) {
+                if (boardGrid[j][i] == last) {
+                    chainSize++;
+                    if (chainSize >= 3)
+                        return true;
+                }
+                else
+                    chainSize = 1;   
+                    
+                last = boardGrid[j][i];
+            }
+        }
        return false;
     }
 
     public void swapPiecesWhenAcceptable(int[] piece_a, int[] piece_b) {
+        if (!areAdjecent(piece_a, piece_b))
+            return;
+        swapAnyTwoPieces(piece_a, piece_b);
+        if (!wasChainCreated())
+            swapAnyTwoPieces(piece_a, piece_b);
 
+    }
+    
+    private boolean areAdjecent(int[] piece_a, int[] piece_b) {
+        return (Math.abs((piece_a[0] - piece_b[0])) == 1) || (Math.abs(piece_a[1] - piece_b[1]) == 1);
     }
 
     public Piece gemAtLocation(int[] piece) {
