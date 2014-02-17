@@ -6,8 +6,6 @@ import java.util.Random;
 class Board {
     public Piece[][] boardGrid;
     private int BOARD_SIZE = 8;
-    private int[][] walkRow = { { 1, 0 }, { -1, 0 } };
-    private int[][] walkColumn = { { 0, 1 }, { 0, -1 } };
 
     public Board() {
         this.boardGrid = new Piece[BOARD_SIZE][BOARD_SIZE];
@@ -17,66 +15,15 @@ class Board {
     // Participant-defined functions
 
     public void swapAnyTwoPieces(int[] piece_a, int[] piece_b) {
-        Piece temp_a = this.boardGrid[piece_a[0]][piece_a[1]];
-        this.boardGrid[piece_a[0]][piece_a[1]] = this.boardGrid[piece_b[0]][piece_b[1]];
-        this.boardGrid[piece_b[0]][piece_b[1]] = temp_a;
+
     }
 
     public Boolean wasChainCreated() {
-        // Left
-        for (int i = 2; i < 8; i++) {
-            for (int j = 0; j < 8; j++) {
-                if (this.boardGrid[i][j] == this.boardGrid[i - 1][j]) {
-                    if (this.boardGrid[i][j] == this.boardGrid[i - 2][j]) {
-                        return true;
-                    }
-                }
-            }
-        }
-        // System.out.println("Left completed");
-        // Right
-        for (int i = 0; i < 6; i++) {
-            for (int j = 0; j < 8; j++) {
-                if (this.boardGrid[i][j] == this.boardGrid[i + 1][j]) {
-                    if (this.boardGrid[i][j] == this.boardGrid[i + 2][j]) {
-                        return true;
-                    }
-                }
-            }
-        }
-        // System.out.println("Right completed");
-        // Up
-        for (int i = 0; i < 8; i++) {
-            for (int j = 2; j < 8; j++) {
-                if (this.boardGrid[i][j] == this.boardGrid[i][j - 1]) {
-                    if (this.boardGrid[i][j] == this.boardGrid[i][j - 2]) {
-                        return true;
-                    }
-                }
-            }
-        }
-        // System.out.println("Up completed");
-        // Down
-        for (int i = 0; i < 8; i++) {
-            for (int j = 0; j < 6; j++) {
-                if (this.boardGrid[i][j] == this.boardGrid[i][j + 1]) {
-                    if (this.boardGrid[i][j] == this.boardGrid[i][j + 2]) {
-                        return true;
-                    }
-                }
-            }
-        }
-        // System.out.println("Down completed");
-        return false;
+       return false;
     }
 
     public void swapPiecesWhenAcceptable(int[] piece_a, int[] piece_b) {
-        swapAnyTwoPieces(piece_a, piece_b);
-        if (!wasChainCreated()) {
-            swapAnyTwoPieces(piece_a, piece_b);
-        } else {
 
-        }
     }
 
     public Piece gemAtLocation(int[] piece) {
