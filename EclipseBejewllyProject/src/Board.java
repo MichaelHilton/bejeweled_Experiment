@@ -6,6 +6,11 @@ import java.util.Random;
 class Board {
     public Piece[][] boardGrid;
     private int BOARD_SIZE = 8;
+    
+    private int[] _involvedInSwap1;
+    private int[] _involdedInSwap2;
+    
+    
 
     public Board() {
         this.boardGrid = new Piece[BOARD_SIZE][BOARD_SIZE];
@@ -15,12 +20,34 @@ class Board {
     // Participant-defined functions
 
     public void swapAnyTwoPieces(int[] piece_a, int[] piece_b) {
-
+        // Here is what we need to implement
+        System.out.println("Before swap piece_a= :"+piece_a[0]+","+piece_a[1]);  
+        System.out.println("Before swap piece_b=:"+piece_b[0]+","+piece_b[1]);    
+        int[] temp = piece_a;
+        piece_a = piece_b;
+        piece_b = temp;    
+        System.out.println("Check it swaped piece_a= :"+piece_a[0]+","+piece_a[1]);  
+        System.out.println("Check it swaped piece_b=:"+piece_b[0]+","+piece_b[1]); 
+        
+        //_involvedInSwap1 = piece_a;
+        //_involdedInSwap2 = piece_b;
+        
     }
 
-    public Boolean wasChainCreated() {
-       return false;
+    public boolean wasChainCreated(int[] piece_a, int[] piece_b) {
+        
+               
+        
+        boolean booly = false;
+        
+        
+        
+       return booly;
     }
+    
+    
+    
+    
 
     public void swapPiecesWhenAcceptable(int[] piece_a, int[] piece_b) {
 
