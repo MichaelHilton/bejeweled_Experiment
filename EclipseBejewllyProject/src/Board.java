@@ -14,11 +14,32 @@ class Board {
     // /////////////////////////
     // Participant-defined functions
 
-    public void swapAnyTwoPieces(int[] piece_a, int[] piece_b) {
-
+    public void  swapAnyTwoPieces(int[] a, int[] b){
+        System.out.println("Inside swapAnyTwoPieces");
+        if(a[0] == b[0]){
+            if(Math.abs(a[1]-b[1])==1){
+                //int temp = b[1];
+                //b[1] = a[1];
+                //a[1] = temp;
+                Piece temp = this.boardGrid[a[0]][a[1]];
+                this.boardGrid[a[0]][a[1]] = this.boardGrid[b[0]][b[1]];
+                this.boardGrid[b[0]][b[1]] = temp;
+            }
+            
+        }
+        else if(a[1] == b[1]) {
+              if(Math.abs(a[0]-b[0])==1){
+                Piece temp = this.boardGrid[a[0]][a[1]];
+                this.boardGrid[a[0]][a[1]] = this.boardGrid[b[0]][b[1]];
+                this.boardGrid[b[0]][b[1]] = temp;
+            }
+        }
+        //System.out.println("a[1] is" +a[1]);
+        
     }
 
     public Boolean wasChainCreated() {
+        
        return false;
     }
 
