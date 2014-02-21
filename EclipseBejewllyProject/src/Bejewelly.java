@@ -12,12 +12,12 @@ public class Bejewelly {
         gameBoard.displayBoard();
         int[] piece_a = { 2, 3 };
         int[] piece_b = { 2, 4 };
-
+       // System.out.println("a[1] is" +piece_a[1]);  
         val.checkTask1(gameBoard);
         // FUNCTION TO SWAP ANY TWO PICES. THIS MUST BE IMPLEMENTED IN
         // BOARD.JAVA
         gameBoard.swapAnyTwoPieces(piece_a, piece_b);
-
+        //System.out.println("a[1] is" +piece_a[1]);    
         System.out.println("");
         System.out.println("*********** After Swap ************");
         gameBoard.displayBoard();
@@ -105,6 +105,7 @@ public class Bejewelly {
         }
         System.out.println("");
     }
+
 }
 
 enum Piece {
